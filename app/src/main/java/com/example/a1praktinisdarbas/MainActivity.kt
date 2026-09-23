@@ -10,9 +10,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.graphics.Color
+import android.widget.LinearLayout
 
 class MainActivity : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -20,7 +20,9 @@ class MainActivity : AppCompatActivity() {
 
         val textView1 = findViewById<TextView>(R.id.textView)
         val button = findViewById<Button>(R.id.button)
-        val buttonColor = findViewById<Button>(R.id.buttonColor)
+        val buttonColor = findViewById<Button>(R.id.buttonTextColor)
+        val rootLayout = findViewById<View>(R.id.main)
+        val buttonBackgroundColor = findViewById<Button>(R.id.buttonBackgroundColor)
 
         button.setOnClickListener {
             textView1.text = "Greetings from KK"
@@ -28,6 +30,10 @@ class MainActivity : AppCompatActivity() {
 
         buttonColor.setOnClickListener {
             textView1.setTextColor(Color.RED)
+        }
+
+        buttonBackgroundColor.setOnClickListener {
+            rootLayout.setBackgroundColor(Color.YELLOW)
         }
     }
 
