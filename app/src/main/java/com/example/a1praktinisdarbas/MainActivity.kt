@@ -1,5 +1,6 @@
 package com.example.a1praktinisdarbas
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -8,8 +9,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.graphics.Color
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -17,9 +20,14 @@ class MainActivity : AppCompatActivity() {
 
         val textView1 = findViewById<TextView>(R.id.textView)
         val button = findViewById<Button>(R.id.button)
+        val buttonColor = findViewById<Button>(R.id.buttonColor)
 
         button.setOnClickListener {
             textView1.text = "Greetings from KK"
+        }
+
+        buttonColor.setOnClickListener {
+            textView1.setTextColor(Color.RED)
         }
     }
 
