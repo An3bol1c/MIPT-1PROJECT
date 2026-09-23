@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         buttonBackgroundColor.setOnClickListener {
             rootLayout.setBackgroundColor(Color.YELLOW)
-        }
+        } // revert after merge
     }
 
 }
